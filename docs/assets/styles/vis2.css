@@ -1,0 +1,84 @@
+.node rect {
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+  }
+  
+.node text {
+    pointer-events: none;
+    /*text-shadow: 0 1px 0 #fff;*/
+    font-family: "Cambria", serif;
+    font-size: 1.4em;
+}
+
+.vis2-link {
+    fill: none;
+    stroke-opacity: .5;
+}
+
+#vis2-svg:hover .vis2-link:hover {
+    stroke-opacity: .9 !important;
+}
+
+#vis2-svg:hover .vis2-link.fade {
+    stroke-opacity: .1;
+}
+
+#vis2-svg:hover .vis2-link.highlight {
+    stroke-opacity: .7;
+}
+
+#vis2-svg rect {
+    cursor: pointer;
+}
+
+.vis2-label {
+    height: 700px;
+}
+
+.vis2-label span {
+    /*display: flex;*/
+}
+
+.vis2-label div {
+    font-size: 3.3em;
+    /*display: flex;*/
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: col;
+    justify-content: center;
+}
+
+#reset {
+    font-size: 2em;
+    background: white;
+    color: black;
+    padding: 0.2em;
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+.vis2-help {
+    margin-top: 2em !important;
+}
+
+#vis2-svg {
+    flex-shrink: 0;
+}
+
+.vis2-help {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4em;
+}
+
+.vis2-help p {
+    margin: auto;
+}

@@ -1,0 +1,79 @@
+.line1 {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.line2 {
+    fill: none;
+    stroke-width: 2px;
+}
+
+.line3 {
+    fill: none;
+    stroke-width: 2px;
+}
+
+.axisYellow text{
+    fill: white;
+    font: 16px sans-serif; 
+}
+
+.axisYellow line{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisYellow path{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisWhite text{
+    fill: white;
+    font: 16px sans-serif; 
+}
+
+.axisWhite line{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisWhite path{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisBlack text{
+    fill: white;
+    font: 16px sans-serif; 
+}
+
+.axisBlack line{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisBlack path{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axisBlack {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+.axisWhite {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+.axisYellow {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+#vis1-svg {
+    margin-right: 1.5em;
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Crytomonnaies</title>
+		<meta name="description" content="Crytomonnaies">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300"/>
+		<link rel="stylesheet" href="./assets/styles/main.css"/>
+		<link rel="stylesheet" href="./assets/styles/vis1.css"/>
+		<link rel="stylesheet" href="./assets/styles/vis2.css"/>
+		<link rel="stylesheet" href="./assets/styles/vis3.css"/>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+	<body>
+		<section class="panel home" data-section-name="Introduction">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Quelle est l'opinion des internautes sur les différentes cryptomonnaies?</b></h3>
+					<p>
+						Les cryptomonnaies sont des actifs numériques dont le prix fluctue énormément comparativement à d'autres types d'actif.
+						Nous nous sommes intéressés aux sentiments exprimés par les internautes sous la forme de commentaires au sujet de ces cryptomonnaies.
+						Nous voulons explorer la relation entre les sentiments et la fluctuation du prix, ainsi que les interactions entre les internautes.
+					</p>
+					<img id="process" src="assets/img/logos.png"></img>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel home" data-section-name="Méthodologie">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Méthodologie</b></h3>
+					<p class="text-justify">Nous avons analysé les commentaires des communautés de cryptomonnaie 
+						sur Reddit pendant une période de 3 mois. Ensuite, nous avons analysé les sentiments de chaque commentaire avec la librairie NLTK
+						et le modèle VADER développé spécifiquement pour les réseaux sociaux. Le résultat est 
+						un chiffre qui varie entre -1 pour les sentiments très négatifs et 1 pour les sentiments très positifs. 
+						Notre script analyse également les cryptomonnaies mentionnées dans chaque commentaire.
+					</p>
+					<img id="process" src="assets/img/process.png"></img>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel home" data-section-name="Données">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Données</b></h3>
+					<p class="text-data">
+						Nous avons collecté 5 millions de commentaires entre le 1 décembre 2017 et le 28 février 2018 sur les 100 plus gros subreddits de cryptomonnaie
+						pour un total de 2.5 gigaoctets de fichiers JSON. Nous avons également utilisé le prix quotidien des cryptomonnaies disponible sur coinmetrics.io.
+						<br><br>
+						Après notre analyse:
+						<br><br>
+						<div style="text-align: center; font-size: 3em;">
+							<b>
+								2,025,462 commentaires gardés.
+								<br><br>
+								<span style="color:rgb(14, 104, 14)">721,585 commentaires positifs.</span>
+								<br><br>
+								<span style="color:rgb(230, 197, 15)">1,076,368 commentaires neutres.</span>
+								<br><br>
+								<span style="color:rgb(185, 59, 59)">227,509 commentaires négatifs.</span>
+							</b>
+						</div>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel home" data-section-name="Visualisation-1">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Évolution des sentiments et du prix</b></h2>
+					<div class="flex-row">
+						<div>
+							<h3 class="title">ETH</h3>
+							<svg id="vis1-svg"></svg>
+						</div>
+
+							<div class="flex-column end">
+								<svg id="vis1-mini1-svg" class="mini"></svg>
+								<svg id="vis1-mini2-svg" class="mini"></svg>
+								<svg id="vis1-mini3-svg" class="mini"></svg>
+								<svg id="vis1-mini4-svg" class="mini"></svg>
+								<svg id="vis1-mini5-svg" class="mini"></svg>
+							</div>
+							<div class="flex-column end">
+								<svg id="vis1-mini6-svg" class="mini"></svg>
+								<svg id="vis1-mini7-svg" class="mini"></svg>
+								<svg id="vis1-mini8-svg" class="mini"></svg>
+								<svg id="vis1-mini9-svg" class="mini"></svg>
+								<svg id="vis1-mini10-svg" class="mini"></svg>
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel home" data-section-name="Visualisation-2">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Provenance des commentaires</b></h3>
+					<button id="reset">Réinitialiser</button>
+					<div class="flex-row">
+						<div class="vis2-label flex-col">
+							<div style="margin-top: 350px; margin-right: 25px;">Subreddits</div>
+						</div>
+						<svg id="vis2-svg" width="1100" height="700"></svg>
+						<div class="vis2-label flex-col">
+							<div style="margin-top: 350px; margin-left: 25px;">Crytomonnaies<br>mentionnées</div>
+						</div>
+					</div>
+					<div class="flex-row">
+						<div class="vis2-help">
+							<p class="text-justify">Cliquez sur un noeud pour en avoir une vue détaillée.</p>
+						</div>
+						<div>
+							<p>Commentaires</p>
+							<svg id="vis2-legend-svg"></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel home" data-section-name="Visualisation-3">
+			<div class="inner">
+				<div class="vertical-center">
+					<h3><b>Distribution des utilisateurs</b></h3>
+					<div class="btn-group" data-toggle="buttons">
+						<label class="active-users btn">
+							<input type="radio" name="options" checked="checked"> Utilisateurs les plus actifs
+						</label>
+						<label class="positive-users btn">
+							<input type="radio" name="options"> Utilisateurs les plus positifs
+						</label>
+						<label class="negative-users btn">
+							<input type="radio" name="options"> Utilisateurs les plus négatifs
+						</label>
+					</div>
+					<div id="chart">
+					</div>
+						<div class="flex-row vis3">
+							<div>
+								<p class="text-justify">Un cercle représente un utilisateur qui a publié au moins 5 fois dans un subreddit. 300 utilisateurs sont affichés dans chaque catégorie.</p>
+							</div>
+							<div>
+								<p>Écart type</p>
+								<svg id="vis3-line-svg"></svg>
+							</div>
+							<div>
+								<p>Sentiment moyen</p>
+								<svg id="vis3-legend-svg"></svg>
+							</div>
+							<div>
+								<p>Nombre de commentaires</p>
+								<svg id="vis3-comment-svg"></svg>
+							</div>
+						</div>
+
+				</div>
+			</div>
+		</section>
+
+		<script src="./assets/libs/jquery-2.1.1.js"></script>
+		<script src="./assets/libs/jquery.scrollify.js"></script>
+		<script src="./assets/libs/d3.v3.js"></script>
+		<!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
+		<script src="https://d3js.org/d3-queue.v3.min.js"></script>
+		<script src="https://unpkg.com/d3-sankey@0.7.1"></script>
+		<script src="./assets/libs/underscore-min.js"></script>
+		<script src="./assets/scripts/sankey-cs.js"></script>
+		<script src="./assets/scripts/scrollify.js"></script>
+		<script src="./assets/scripts/colors.js"></script>
+		<script src="./assets/scripts/vis1.js"></script>
+		<script src="./assets/scripts/vis2.js"></script>
+		<script src="./assets/scripts/vis3.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+	</body>
+</html>

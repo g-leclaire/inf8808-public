@@ -1,0 +1,30 @@
+circle {
+    stroke: black;
+    opacity: 0.9;
+}
+
+.label {
+    fill: white;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.axis {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+
+#vis3-svg:hover circle.fade {
+    fill-opacity: 0.25;
+    stroke-opacity: 0.25;
+}
+
+label.btn {
+    font-size: 2.5em;
+    margin-right: 1em;
+}
+
+.btn-group {
+    margin-bottom: 6em;
+}
